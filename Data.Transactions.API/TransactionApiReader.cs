@@ -74,7 +74,7 @@ namespace Data.Transactions.API
                     Amount = string.IsNullOrEmpty(transaction.Amount)
                         ? 0 //se o valor for nulo, ou vazio, definimos ele igual a 0
                         : double.Parse(transaction.Amount
-                            .ClearSpaces()), // tira todos os espaços do valor, e então dá parse para Double.
+                            .ClearSpaces(), CultureInfo.GetCultureInfo("pt-BR")), // tira todos os espaços do valor, e então dá parse para Double.
                     Category = string.IsNullOrEmpty(transaction.Category)
                         ? ""
                         //Usa Title Case no nome da categoria.

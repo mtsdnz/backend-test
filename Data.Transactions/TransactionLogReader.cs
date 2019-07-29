@@ -63,7 +63,7 @@ namespace Data.Transactions
                 //faz um parse da data, de acordo com as linguagens informadas(pt-BR, en-US)
                 Date = DateHelper.TryParseWithCultures(date.ClearSpaces(), "dd/MMM", new[] {"pt-BR", "en-US"}),
                 Description = description,
-                Amount = string.IsNullOrEmpty(amount) ? 0 : double.Parse(amount.ClearSpaces()),
+                Amount = string.IsNullOrEmpty(amount) ? 0 : double.Parse(amount.ClearSpaces(), CultureInfo.GetCultureInfo("pt-BR")),
                 Category = string.IsNullOrEmpty(category)
                     ? ""
                     //Usa Title Case no nome da categoria.
