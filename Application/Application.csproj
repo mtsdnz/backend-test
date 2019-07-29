@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="transactions.log" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="transactions.log">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Data.Transactions.API\Data.Transactions.API.csproj" />
+    <ProjectReference Include="..\Data.Transactions\Data.Transactions.csproj" />
+    <ProjectReference Include="..\Services.Transactions\Services.Transactions.csproj" />
+  </ItemGroup>
+
+</Project>

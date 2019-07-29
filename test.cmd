@@ -1,0 +1,1 @@
+cd Tests && dotnet test -v normal && pause
